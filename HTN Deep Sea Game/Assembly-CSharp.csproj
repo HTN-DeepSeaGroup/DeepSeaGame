@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Controls.cs" />
+    <Compile Include="Assets\Scripts\Darkness_Manager.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Space/OneDrive/Documents/Github/DeepSeaGame/HTN Deep Sea Game/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
