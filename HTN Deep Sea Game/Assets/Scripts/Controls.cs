@@ -9,10 +9,12 @@ public class Controls : MonoBehaviour
     float horizontalMovement, verticalMovement;
     float xmomentum, ymomentum;
     float maxSpeed = 5f;
+    
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponentInChildren<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
@@ -31,4 +33,6 @@ public class Controls : MonoBehaviour
         xmomentum = rb.velocity[0] * 0.9f;
         ymomentum = rb.velocity[1] * 0.9f;
     }
+
+    
 }

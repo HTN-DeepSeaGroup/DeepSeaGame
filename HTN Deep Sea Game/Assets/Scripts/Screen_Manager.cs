@@ -55,8 +55,7 @@ public class Screen_Manager : MonoBehaviour
             float locy = Random.Range(-Cam.orthographicSize, Cam.orthographicSize);
             Vector3 loc = new Vector3(locx, locy, 0 );
             Quaternion quat = new Quaternion(0f, 0f, 0f, 0f);
-            var spawn = Instantiate(Spawnables[Mathf.RoundToInt(Random.Range(0f, Spawnables.Length))], loc, quat);
-            Debug.Log(spawn);
+            var spawn = Instantiate(Spawnables[Mathf.RoundToInt(Random.Range(0f, Spawnables.Length-1))], loc, quat);
         }
     }
 }
