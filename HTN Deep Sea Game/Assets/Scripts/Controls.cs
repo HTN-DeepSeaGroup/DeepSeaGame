@@ -7,6 +7,8 @@ public class Controls : MonoBehaviour
 
     public Rigidbody2D rb;
     float horizontalMovement, verticalMovement;
+    float xmomentum, ymomentum;
+    float maxSpeed = 5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,12 +21,14 @@ public class Controls : MonoBehaviour
         horizontalMovement = Input.GetAxisRaw("Horizontal");
         verticalMovement = Input.GetAxisRaw("Vertical");
 
-
     }
 
     private void FixedUpdate()
     {
-        print(horizontalMovement);
-        rb.velocity= new Vector2(horizontalMovement*2, rb.velocity[1]);
+        xmomentum += horizontalMovement/3;
+        ymomentum += verticalMovement/3;
+        rb.velocity= new Vector2(Mathf.Min(xmomentum,maxSpeed),Mathf.Min(ymomentum,maxSpeed));
+        xmomentum = rb.velocity[0] * 0.9f;
+        ymomentum = rb.velocity[1] * 0.9f;
     }
 }
